@@ -6,11 +6,11 @@ import os
 
 # Titel en layout
 st.markdown("<h1 style='text-align: center;'>De Afrekening</h1>", unsafe_allow_html=True)
-st.markdown("### Geef je uitgave in:")
 
 # Formulier met nette indeling
 with st.form("expense_form"):
-    datum = st.date_input("Datum", value=date.today())
+    gekozen_datum = st.date_input("Datum", value=date.today())
+    datum = gekozen_datum.strftime("%d/%m/%Y")
     winkel = st.text_input("Winkel")
     persoon = st.selectbox("Persoon", ["Toni", "Hilde"])
     bedrag = st.number_input("Bedrag (€)", min_value=0.01, format="%.2f")
