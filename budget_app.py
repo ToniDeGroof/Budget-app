@@ -5,7 +5,7 @@ from openpyxl import load_workbook
 import os
 
 # Titel en layout
-st.markdown("<h1 style='text-align: center;'>De Afrekening</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: left;'>De Afrekening</h1>", unsafe_allow_html=True)
 
 # Formulier met nette indeling
 with st.form("expense_form"):
