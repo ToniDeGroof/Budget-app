@@ -17,21 +17,6 @@ with st.form("expense_form"):
     
     submitted = st.form_submit_button("Toevoegen")
 
-if submitted:
-    # Pad naar Excel-bestand (in dezelfde map als script)
-    bestand = "uitgaven.xlsx"
-
-    # Nieuwe rij met gegevens
-    nieuwe_data = pd.DataFrame([[datum, winkel, persoon, bedrag]],
-                               columns=["Datum", "Winkel", "Persoon", "Bedrag"])
-
-    # Bestaat het bestand al?
-    if os.path.exists(bestand):
-        bestaande_data = pd.read_excel(bestand)
-        volledige_data = pd.concat([bestaande_data, nieuwe_data], ignore_index=True)
-    else:
-        volledige_data = nieuwe_data
-
     # Google Sheets-authenticatie
 scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
 credentials = ServiceAccountCredentials.from_json_keyfile_dict(st.secrets["gcp_service_account"], scope)
