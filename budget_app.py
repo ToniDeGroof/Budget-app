@@ -12,7 +12,7 @@ st.markdown("### Geef je uitgave in:")
 with st.form("expense_form"):
     datum = st.date_input("Datum", value=date.today())
     winkel = st.text_input("Winkel")
-    persoon = st.selectbox("Persoon", ["Jan", "Els"])
+    persoon = st.selectbox("Persoon", ["Toni", "Hilde"])
     bedrag = st.number_input("Bedrag (€)", min_value=0.01, format="%.2f")
     
     submitted = st.form_submit_button("Toevoegen")
